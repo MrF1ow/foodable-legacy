@@ -1,91 +1,65 @@
 # Foodable
 
-Foodable will be an AI-powered web application designed to help users discover healthy and affordable food options tailored to their dietary needs and budget. The app offers personalized recommendations, recipe sharing, and grocery lists with nutritional insights.
+Foodable is a food-focused application aimed at reducing friction in healthy, budget-conscious meal planning by connecting recipes, groceries, pricing, and delivery into a single workflow.
 
-## Features
-- **Personalized Recipe Suggestions**: Discover recipes that meet your dietary preferences and budget.
-- **Custom Grocery Lists**: Generate shopping lists from your recipes and dietary needs.
-- **Nutritional Insights**: Get AI-assisted insights into nutritional content to make healthier choices.
-- **Authentication & Access Control**: Secure user accounts using Clerk.js
+This repository currently contains **one of two implementations** of Foodable:
 
-## Tech Stack
-- **Frontend**: Built with Next.js and styled using Tailwind CSS for a responsive UI.
-- **Backend**: Node.js API with MongoDB Atlas as the database, which includes vector search capabilities.
-- **AI & Embedding**: Uses OpenAI and MongoDB Atlas Vector Search.
-- **Deployment**: Hosted on Vercel with CI/CD integration.
+- **Foodable — Remastered** (active development)
+- **Foodable — Legacy** (original production prototype)
 
-## Project Structure
-```plaintext
-/project-root
-├── /.github
-├── /frontend                # NextJS Front End Code
-   ├── /__tests__            # Jest Tests
-   ├── /cypress              # Cypress Tests
-   ├── /public               # Public Data and Assets
-   ├── /src                  # Source Code
-      ├── /app               # Page Routes and API Routes
-         ├── /api            # API Rotues
-      ├── /assets            # Assets (fonts, images)
-      ├── /components        # UI Components
-      ├── /config            # Configurations of Data
-      ├── /hooks             # Client Side Custom Hooks
-      ├── /layouts           # Client and Server Side Layouts
-      ├── /lib
-          ├── /hooks         # Client Side Custom Hooks
-          ├── /utils         # Utility Functions for Various Things
-      ├── /providers         # Providers for Application
-      ├── /server            # Methods to Communicate with Server
-         ├── /api            # Fetch Methods to Communicate with API
-         ├── /hooks          # TanStack Hooks to Communicate with API
-      ├── /stores            # Zustand Stores
-      ├── /types             # Types for Data throughout Application
-   ├── .env.local            
-├── /postman                 # Location of Export Postman Tests and Environment
-└── README.md                # Project documentation
-```
+Both are intentionally preserved.
 
-## Local Development / Deployment
+## 🚧 Foodable — Remastered (In Development)
 
-### IMPORTANT: 
+**Status:** Active rebuild  
+**Focus:** Performance, correctness, maintainability, long-term scalability
 
-Before starting local development or deployment, make sure you've properly created and configured the `.env.local` file in the root of the `frontend` directory.  
-You can use the provided [`env.txt`](./frontend/env.txt) file at the top level of the project as a reference.
+Foodable is currently being **rebuilt from the ground up** with a backend-first architecture and a tighter scope. The remaster exists to correct architectural complexity and operational overhead that accumulated in the original implementation.
 
-1. Prerequisites:
-   - Node.js
-   - MongoDB Atlas Account
-   - Clerk.js Account Setup
-2. Clone the repository:
-   ```bash
-   git clone git@github.com:MrF1ow/foodable.git
-   cd foodable
-   ```
-3. Install packages
-   ```bash
-   npm install
-   ```
-4. Ensure Build Process Works Correctly
-    ```bash
-    npm run build
-    ```
-5. Start The Application
-    ```bash
-    npm start
-    ```
-6. Access the App @:
-    ```bash
-    http://localhost:8000
-    ```
-## Accessing the Webpage
+### Key Characteristics
+- Backend-first design
+- Strong relational data modeling
+- Reduced dependency and runtime complexity
+- Designed for future mobile and multi-client support
 
-### Please Note Before Accessing:
+**Note**: The current repository is private. If you’re interested in contributing to the remastered version of Foodable, please reach out via email at ethanflowdev@gmail.com
 
-1. Some features are still under development.
-2. Known issues may still exist. If you encounter any bugs or unexpected behavior, please report them via the [`Issues`](https://github.com/MrF1ow/Foodable/issues) tab.
-3. The site is using development API keys, which may result in slower response times or limited functionality.
+## 🧪 Foodable — Legacy (Original Implementation)
 
-### Access the Site
+**Status:** Feature-complete prototype  
+**Focus:** AI-assisted food discovery and experimentation
 
-Visit: [https://foodable.xyz](https://foodable.xyz)
+The legacy version represents the **original full-stack implementation**, including AI-driven recommendations, vector search, and a richer—but heavier—tooling stack. It remains in the repository for reference, learning, and historical context.
 
+### Key Characteristics
+- AI-powered recommendations
+- Vector search with embeddings
+- Rich frontend experimentation
+- Production deployment experience
 
+### Tech Stack
+- **Frontend:** Next.js + Tailwind CSS  
+- **Backend:** Node.js  
+- **Database:** MongoDB Atlas (Vector Search)  
+- **Auth:** Clerk.js  
+- **State Management**: Zustand + Tanstack Query
+- **AI Model**: OpenAI
+
+### Running Application
+This application relies on multiple external services, which is one of the primary reasons it is being rebuilt. If you would like to run the application locally, please contact ethanflowdev@gmail.com for setup details.
+
+## Why the Rewrite Exists
+
+The legacy system worked—but it was **too complex for what the product actually needs**.
+
+The remaster prioritizes:
+- Predictable performance
+- Simpler mental models
+- Fewer moving parts
+- Easier long-term ownership
+
+This is not a pivot away from ambition; it’s a correction toward **sustainability**.
+
+## License & Contributions
+
+This project is under active development. Contribution guidelines will be formalized once the remastered API stabilizes.
